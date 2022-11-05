@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+
+body{
+    font-family: 'Zen Antique Soft', serif !important;
+    font-size: 100%;
+    background-color: #e8eced94;
+}
+
+.top{
+    display:flex;
+    justify-content: space-between;
+}
+
+.new button{
+    margin-top:-4px;
+}
+
+
+
+.pane-title{
+    font-size: 1.8rem;
+    font-variant: small-caps;
+    color: grey;
+    padding-top:10px;
+}
+.line{
+    border: 0.5px inset #b3c0c536;
+}
+
+.badge-text{
+    font-size: 14px;
+}
+
+.todo-container{
+    justify-content: start;
+    border-bottom:.5px solid #80808030;
+    width:95%;
+    margin: auto;
+    padding-bottom:10px;
+    margin: 10px 0;
+    background-color: #fff;
+    /* box-shadow:3px 3px 3px grey; */
+    border-radius: 8px;
+
+}
+
+.radio{
+   width:15%;
+}
+
+.radio input{
+    padding: 50px;
+    width:100%;
+    margin-top:30px;
+    display:block;
+}
+
+.todo{
+    width:85%;
+  
+}
+
+.todo-title,.todo-body,.todo-detail{
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.time input{
+    border:none;
+}
+.todo-body{
+    padding-top: 0;
+    font-size: 1rem;
+}
+
+.todo-detail{
+    font-size:.8rem;
+    padding:3px 10px
+}
