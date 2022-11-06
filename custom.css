@@ -95,8 +95,8 @@ body{
     width: 90%;
     /* height: 100%; */
     /* top:0; */
-    /* top:200px; */
-    top: -1000px;
+    top:200px;
+    /* top: -1000px; */
     /* left:0;
     right:0; */
     /* bottom:0; */
@@ -108,6 +108,7 @@ body{
     background-position: center;
     background-size: cover;
     background-blend-mode: overlay;
+   /* transform: translateY(-1000px); */
 
 }
 
@@ -119,4 +120,24 @@ body{
 .hide-item{
     display:none;
 }
+
+@keyframes scrollToView {
+    0%{ transform: translateY(-100px);}
+    /* 25%{transform: translateX(50px);}
+    50%{transform: translateY(100px);}
+    75%{transform: translateY(150px);} */
+    100%{transform: translateY(50px);}
+
+}
+
+.scroll{
+    animation-name: scrollToView;
+    animation-duration: 2s;
+    animation-direction: forward;
+    animation-timing-function: ease-in;
+}
+
+
+
+
 

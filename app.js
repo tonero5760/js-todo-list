@@ -8,6 +8,7 @@ window.onload = function(e){
    addTaskWindow.classList.add('hide-item'); 
 
    btnAddTask.addEventListener('click',function(e){
+    addTaskWindow.classList.add('scroll');
     addTaskWindow.classList.toggle('hide-item');
    })
 }
