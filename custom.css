@@ -13,6 +13,9 @@ body{
 
 .new button{
     margin-top:-4px;
+    border-bottom-left-radius: 20px ;
+    box-shadow: 2px -3px 14px 5px #afa8a8;
+    display: block;
 }
 
 
@@ -39,9 +42,12 @@ body{
     padding-bottom:10px;
     margin: 10px 0;
     background-color: #fff;
-    /* box-shadow:3px 3px 3px grey; */
     border-radius: 8px;
 
+}
+
+.todo-container:hover{
+     box-shadow:1px 1px 4px 0px #b5aeae;
 }
 
 .radio{
@@ -79,3 +85,38 @@ body{
     font-size:.8rem;
     padding:3px 10px
 }
+
+.overlay{
+    /* border-bottom-left-radius: 15px; */
+    padding-top:20px;
+    border-radius: 15px;
+    padding:10px;
+    position: fixed;
+    width: 90%;
+    /* height: 100%; */
+    /* top:0; */
+    /* top:200px; */
+    top: -1000px;
+    /* left:0;
+    right:0; */
+    /* bottom:0; */
+    margin:auto;
+    background-color: rgb(85, 85, 85);
+    z-index:2;
+    background-image: url(img/bg_1.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+
+}
+
+
+
+
+
+/*Dynamic style*/
+.hide-item{
+    display:none;
+}
+
