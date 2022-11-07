@@ -1,22 +1,20 @@
 window.onload = function (e) {
   console.log("able");
-  //    const addTaskWindow =  document.querySelector('.add-task');
-
-  //    const btnAddTask = document.querySelector('.btn-addTask');
-
-  //    addTaskWindow.classList.add('hide-item');
-
-  //    btnAddTask.addEventListener('click',function(e){
-  //     addTaskWindow.classList.add('scroll');
-  //     addTaskWindow.classList.toggle('hide-item');
-  //    })
 
   //Data controller
-  const TodoController = (function () {})();
+  const TodoController = (function (ctrl, uiCtrl) {
+    
+    const Todo = function(id,title,desc,date,assignedTo){
+        this.id = 1,
+        this.title = title,
+        this.desc = desc,
+        this.date = date,
+        this.assignedTo = assignedTo
+    }
+  })();
 
   //user interface controller
-  const UiController = (function () {
-
+  const UiController = (function (todoCtrl) {
     //domstrings used to map css classes to object
     const DomStrings = {
       TASKBTN: ".btn-addTask",
@@ -40,47 +38,56 @@ window.onload = function (e) {
         taskForm.classList.toggle("hide-item");
       });
 
-    //read user input data
-  
-
-    //get the task input
-    const getTaskInput = () => {
-        const inputData = {
+    return {
+      DomStrings: DomStrings,
+      getInputs: function(){
+        return{
             title: document.querySelector(DomStrings.TASKTITLE).value,
             desc: document.querySelector(DomStrings.TASKDESC).value,
             date: document.querySelector(DomStrings.TASKDATE).value,
-            user: document.querySelector(DomStrings.TASKASSIGNED).value,
-          };
-        return inputData;
+            user: document.querySelector(DomStrings.TASKASSIGNED).value
+        }
+      }
     };
+  })(TodoController);
+
+  //main controller
+  const Controller = (function (todoCtrl, uiCtrl) {
+  const DomStrings = uiCtrl.DomStrings
+
+    console.log(DomStrings);
+    const init = () => {
+      console.log("Application starts");
+      //hide the form by default
+      document.querySelector(DomStrings.TASKFORM).classList.add("hide-item");
+    };
+
+    const addItem = ()=>{
+        const { title,desc,date } = uiCtrl.getInputs()
+
+        if(title == "" || desc == "" || date == ""){
+            console.log('Empty input');
+            return;
+        }
+        console.log(uiCtrl.getInputs())
+    }
+
+    document.querySelector(DomStrings.TASKSUBMIT).addEventListener("submit", function (e) {
+       
+        e.preventDefault();
+        addItem()
+      
+    });
 
     document.addEventListener("keypress", function (e) {
       if (e.which === 13 || e.keyCode === 13) {
         e.preventDefault();
-        console.log(getTaskInput());
+        addItem()
+     
       }
     });
 
-    submitTaskBtn.addEventListener("submit", function (e) {
-      e.preventDefault();
-    
-      console.log(getTaskInput());
 
-    });
-
-    return {
-      DomStrings: DomStrings,
-    };
-  })();
-
-  //main controller
-  const Controller = (function (todoCtrl, uiCtrl) {
-    const init = () => {
-      console.log("Application starts");
-      const { DomStrings } = uiCtrl;
-      //hide the form by default
-      document.querySelector(DomStrings.TASKFORM).classList.add("hide-item");
-    };
 
     return {
       init: init,
