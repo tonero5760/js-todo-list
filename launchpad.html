@@ -14,78 +14,82 @@
 
     <title>Lockit Todo App</title>
   </head>
-  <body>
+  <body class="">
 
-    <div class="container">
-        <div class="top">
-            <h1 class="pane-title">Todo<sup><span class="badge badge-secondary badge-text">2</span></sup></h1>
+    <div class="container col-md-6 col-lg-8 offset-lg-2 offset-md-3">
+        <div class="w-80 mx-auto">
 
-            <div class="new">
-               <button type="button" class="btn btn-success pb-3 btn-rounded-circle mr-3 btn-addTask"><span class="fa fa-plus fa-1x"></span></button> 
+            <div class="top">
+                <h1 class="pane-title">Todo<sup><span class="badge badge-secondary badge-text">2</span></sup></h1>
+    
+                <div class="new">
+                   <button type="button" class="btn btn-success pb-3 btn-rounded-circle mr-3 btn-addTask"><span class="fa fa-plus fa-1x"></span></button> 
+                </div>
             </div>
-        </div>
-        <hr class="line">
-
-        <!-- Add task overlay -->
-        <div class=" overlay add-task">
-            <form action="" method="post" class="submit-task">
-                <div class="form-group">
-                <label for="" style="color: #fff">Add Task</label>
-                <input type="text"
-                    class="form-control title" name="" id="" aria-describedby="helpId" placeholder="Title"/>
-                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
-                </div>
-
-                <div class="form-group">
-                <textarea class="form-control desc" name="" id="" rows="3" cols="10" placeholder="Task Description"></textarea>
-                </div>
-
-                <div class="form-group todo-detail">
-                    <span class="time"><input type="date" class="date" name="" id=""></span>
-                    <span class="fa fa-alt"></span> &bullet;
-
-                    <span class="time"><select name="" id="" class="user">
-                        <option value="Toni">Toni</option>
-                    </select>
-                    <span class="fa fa-user" style="color:#fff"></span> &bullet;
-                    
-                
-                </div>
-
-                <button type="submit" class="btn btn-success btn-sm">Add Task</button>
-
-                <button type="reset" class="btn btn-danger btn-sm cancel-task">Cancel</button>
-            </form>
-        </div>
-
-        <!-- Task container -->
-        <div class="task-comp">
-
-             <!-- single task component -->
-            <div class="row todo-container">
-            <div class="radio"><input type="radio" name="" id=""/></div>
-
-                <div class="todo">
-                    <h1 class="todo-title">Push to Git</h1>
-                    <p class="todo-body"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    <div class="todo-detail">
-                        <span class="time"><input type="date" name="" id=""></span>
-                        <span class="fa fa-alt"></span> &bullet;
-
-                        <span class="assigned"> <span class="fa fa-user"></span> Toni</span>
-                        
-                        &bullet;
-
-
-                        <button class="btn btn-sm btn-info btn-pill"><i class="fa fa-maximize" aria-hidden="true"></i></button>
-                        <button class="btn btn-sm btn-danger btn-pill"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            <hr class="line">
+    
+            <!-- Add task overlay -->
+            <div class="overlay add-task col-sm-8 offset-sm-2 col-md-8 offset-md-2">
+                <form action="" method="post" class="submit-task">
+                    <div class="form-group">
+                    <label for="" style="color: #fff">Add Task</label>
+                    <input type="text"
+                        class="form-control title" name="" id="" aria-describedby="helpId" placeholder="Title"/>
+                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                     </div>
-                </div>
+    
+                    <div class="form-group">
+                    <textarea class="form-control desc" name="" id="" rows="3" cols="10" placeholder="Task Description"></textarea>
+                    </div>
+    
+                    <div class="form-group todo-detail">
+                        <span class="time"><input type="date" class="date" name="" id=""></span>
+                        <span class="fa fa-alt"></span> &bullet;
+    
+                        <span class="time"><select name="" id="" class="user">
+                            <option value="Toni">Toni</option>
+                        </select>
+                        <span class="fa fa-user" style="color:#fff"></span> &bullet;
+                        
+                    
+                    </div>
+    
+                    <button type="submit" class="btn btn-success btn-sm">Add Task</button>
+    
+                    <button type="reset" class="btn btn-danger btn-sm cancel-task">Cancel</button>
+                </form>
             </div>
-
-           
-
+    
+            <!-- Task container -->
+            <div class="task-comp task-wrapper">
+    
+                 <!-- single task component -->
+                <!-- <div class="row todo-container">
+                <div class="radio"><input type="radio" name="" id=""/></div>
+    
+                    <div class="todo">
+                        <h1 class="todo-title">Push to Git</h1>
+                        <p class="todo-body"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <div class="todo-detail">
+                            <span class="time"><input type="date" name="" id=""></span>
+                            <span class="fa fa-alt"></span> &bullet;
+    
+                            <span class="assigned"> <span class="fa fa-user"></span> Toni</span>
+                            
+                            &bullet;
+    
+    
+                            <button class="btn btn-sm btn-info btn-pill"><i class="fa fa-maximize" aria-hidden="true"></i></button>
+                            <button class="btn btn-sm btn-danger btn-pill"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+    
+               
+    
+            </div>
         </div>
+      
     </div>
 
 
