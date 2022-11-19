@@ -19,8 +19,8 @@ body{
 
 .new button{
     margin-top:-4px;
-    border-bottom-left-radius: 20px ;
-    box-shadow: 2px -3px 14px 5px #afa8a8;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px -2px 8px 0px #afa8a8;
     display: block;
 }
 

@@ -64,10 +64,11 @@ window.onload = function (e) {
       TASKDATE: ".date",
       TASKASSIGNED: ".user",
       TASKITEMHOLDER: ".task-comp",
+      TODOCOUNT: ".todo-count"
 
     };
 
-    const submitTaskBtn = document.querySelector(DomStrings.TASKSUBMIT);
+   
 
     //toggle task form
     document
@@ -83,6 +84,11 @@ window.onload = function (e) {
 
     const updateUI = (todoObjs) => {
       let todos = todoObjs();
+      // todos.reverse();
+
+      //update the todo counts
+      document.title+=` (${todos.length})`;
+      document.querySelector(DomStrings.TODOCOUNT).textContent = todos.length; 
       // let todos = todoObjs;
       let todoString = todos.map((todo) => {
         const { id, title, desc, date, assignedTo } = todo;
@@ -178,6 +184,10 @@ window.onload = function (e) {
       document.querySelector(DomStrings.TASKFORM).classList.add('hide-item')
 
       todoCtrl.savetodo();
+
+      setTimeout(()=>{
+        window.location.reload();
+      },500)
       
     };
 
