@@ -56,13 +56,28 @@ window.onload = function (e) {
 
     }
 
+    const readUserFile = ()=>{
+      const fileReader = new FileReader()
+      
+      fileReader.onload = function(){
+        const users = fileReader.result.split('\n')
+        console.log(users);
+      }
+
+
+      blob = new Blob('./users.txt');
+      fileReader.readAsText(blob,'utf8')
+
+    }
+
     return {
       createTodo: createTodo,
       addTodo: addTodo,
       getTodoList: getTodoList,
       savetodo:saveTodo,
       updateTodoList:updateTodoList,
-      removeTask:removeTask
+      removeTask:removeTask,
+      readUserFile:readUserFile
     };
   })();
 
@@ -164,6 +179,8 @@ window.onload = function (e) {
 
       //hide the form by default
       document.querySelector(DomStrings.TASKFORM).classList.add("hide-item");
+
+      todoCtrl.readUserFile();
     };
 
     const getID = () => {
