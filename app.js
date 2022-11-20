@@ -40,12 +40,29 @@ window.onload = function (e) {
 
     }
 
+    const removeTask = (id)=>{
+      const myTodos = updateTodoList();
+      const currentTodos = myTodos.filter((todo)=>{
+          return todo.id != id;
+      })
+
+      TodoHolder = currentTodos;
+      TodoHolder = [...currentTodos];
+
+      saveTodo();
+
+      console.log(TodoHolder);
+    
+
+    }
+
     return {
       createTodo: createTodo,
       addTodo: addTodo,
       getTodoList: getTodoList,
       savetodo:saveTodo,
-      updateTodoList:updateTodoList
+      updateTodoList:updateTodoList,
+      removeTask:removeTask
     };
   })();
 
@@ -70,6 +87,7 @@ window.onload = function (e) {
 
    
 
+
     //toggle task form
     document
       .querySelector(DomStrings.TASKBTN)
@@ -80,8 +98,6 @@ window.onload = function (e) {
       });
 
     //update the app ui
-    //   console.log(todoList);
-
     const updateUI = (todoObjs) => {
       let todos = todoObjs();
       // todos.reverse();
@@ -129,6 +145,7 @@ window.onload = function (e) {
     const addTodo = todoCtrl.addTodo;
     //todolist from localstorage
     const updatetodoList = todoCtrl.updateTodoList;
+    const deleteTodo = todoCtrl.removeTask;
 
     //module lvl todolist
     const todoList  = todoCtrl.getTodoList
@@ -205,6 +222,22 @@ window.onload = function (e) {
         addItem();
       }
     });
+
+     //delete task
+     const holder = document.querySelector(DomStrings.TASKITEMHOLDER)
+     holder.addEventListener('click',function(e){
+      if(e.target.classList.contains('fa-trash')){
+            const id = e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-id');
+
+            const currentElement = e.target.parentElement.parentElement.parentElement.parentElement;
+
+           
+            deleteTodo(id)
+            currentElement.remove()
+           
+          }
+        
+     })     
 
     return {
       init: init,
